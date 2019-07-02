@@ -1,0 +1,12 @@
+{
+  "reddit" : {
+    "cid": "",
+    "cse": "",
+    "uag": ""
+  },
+  "database" : {
+    "url": "",
+    "port": 0,
+    "table": ""
+  }
+}
