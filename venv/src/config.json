@@ -1,12 +1,12 @@
 {
   "reddit" : {
-    "cid": "",
-    "cse": "",
-    "uag": ""
+    "cid": "XklA4djMn7joHw",
+    "cse": "OFVhWq3MuhcEWDDvgiI4CdNkRy0",
+    "uag": "MikeTradingCardGames"
   },
   "database" : {
-    "url": "",
-    "port": 0,
-    "table": ""
+    "url": "localhost",
+    "port": 27017,
+    "table": "testdb"
   }
 }

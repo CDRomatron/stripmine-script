@@ -1,12 +1,17 @@
 from spider.spider import Spider
 import praw
+from spiderextract import Spiderextract
 
 
 def getNew(reddit, sub, n):
     submissions = []
     for submission in reddit.subreddit(sub).new(limit=n):
-        submissions.append(submission.selftext)
-        print(submission.selftext)
+        meta = {}
+        meta['Title'] = submission.title
+        meta['Author'] = submission.author.name
+        meta['Source'] = 'https://reddit.com' + submission.permalink
+        meta['Fulltext'] = submission.selftext
+        submissions.append(Spiderextract(submission.selftext, meta))
     return submissions
 
 

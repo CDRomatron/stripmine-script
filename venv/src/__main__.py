@@ -13,13 +13,21 @@ f.close()
 
 
 spider = RedditSpider(config['reddit'])
-
 miner = Margotminer('/miner/predictor/')
-miner.runminer(spider.runspider()[0], '0')
-
 parser = Margotsadfaceparser('/miner/predictor/')
-
 database = Mongodatabase(config['database'])
-database.insertvalue(parser.tosadface('0'))
+
+data = spider.runspider()
+print("spider finished!")
+count = 0
+for item in data:
+    jsonout = miner.runminer(item.text, str(count))
+    print("miner done! " + str(count))
+    sadfaceout = parser.tosadface(jsonout, item.meta)
+    database.insertvalue(sadfaceout)
+    print("database inserted! "+str(count))
+    count += 1
+
+
 
 print("done!")
