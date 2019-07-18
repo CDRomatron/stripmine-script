@@ -7,6 +7,8 @@ from abc import ABC, abstractclassmethod
 
 #The Sadfaceparser class should output a SADFace json
 
+#for additional metadata to be displayed on the sadface webapp, use ['metadata']['extended']
+
 class Sadfaceparser(ABC):
     @abstractclassmethod
     def tosadface(self):
